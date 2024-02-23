@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab--05,Fangfang</title>
+  </head>
+  <body>
+    <!-- 
+    Assignment
+      1) Create a few variables with strings.
+      2) Apply the string methods that we've learned to your strings
+      3) Your can try to get the strings from a PROMPT
+      4) You must create 4-5 different arrays (vary the type of data )
+      5) Display the values from your array and/or specific element position value. 
+      6) Practice if - else if - else 
+    -->
+
+    <script>
+      //  Create variables and get input.
+      let start = alert(
+        " Are you ready? Let's Get started on your writting test."
+      );
+      let firstName = prompt("What is your firstname?");
+      let lastName = prompt("What is your lastName?");
+
+      //  Concat method.
+      let fullName = firstName.concat(" ", lastName);
+
+      //  toUpperCase method.
+      let upperName = fullName.toUpperCase();
+
+      //  prompt
+      let emailAddres = prompt(
+        "Which Email Addres that you want to receive the reslut?"
+      );
+
+      //  Alert and concatenation.
+      let message = alert(`
+        Hello ${upperName},
+        Write your sentence ( with/without one "fack" ) and then get your result.
+      `);
+
+      // Trim method
+      let getSentence = prompt("");
+      let trimedSentence = getSentence.trim();
+      console.log(`Your origenal sentence is below :
+       ${trimedSentence}`);
+
+      // includes method.
+      let checkBadWord = trimedSentence.includes("fack");
+
+      // indexOf method.
+      if (checkBadWord) {
+        let badWordsIndex = trimedSentence.indexOf("fack");
+        console.log(
+          `ATTENTION:
+          Any bad word in your sentences that will not be counted.
+          The bad words is spoted at [${badWordsIndex}] characters which will be deleted automatically.`
+        );
+      } else {
+        console.log("There is no bad words in your sentence.");
+      }
+
+      //  Replace method.
+      let replaceBadWorkd = trimedSentence.replace("fack", " ");
+      console.log(`The words being counting are :
+      ${replaceBadWorkd}`);
+
+      // Split method; splite by a blank space. store data in this array.
+      let wordsArray = trimedSentence.split(" ");
+
+      //  Length method.
+      let wordsNmb = wordsArray.length;
+      let lesstWords = [10, 30, 50];
+
+      //  If else statement.
+      if (wordsNmb < lesstWords[0]) {
+        alert(
+          " Woh, I am afraid that your sensentence is too short. Try again."
+        );
+      } else {
+        alert(` ${upperName} , Are you ready to get your result?`);
+      }
+
+      let scoreCounterBase = 2;
+      let gotScore = wordsNmb * scoreCounterBase;
+
+      //  Create arrays and display the items.
+      let scoreRange = [60, 80, 90];
+      let compliment = [
+        "Nice try! Take one more time if you want.",
+        "Good job!",
+        "Excellent job!",
+      ];
+      let userInfo = [upperName, wordsNmb, gotScore, emailAddres];
+      let myNewArray = new Array("Good day", "What a greate day");
+
+      //  if statement.
+      if (gotScore < scoreRange[0]) {
+        console.log(
+          `${myNewArray[0]} ${userInfo[0]}, You are email address is ${userInfo[3]}. You worte ${wordsNmb} words. ${compliment[0]} You have got ${gotScore} score.`
+        );
+      } else if (gotScore >= scoreRange[0] && gotScore < scoreRange[1]) {
+        console.log(
+          `${myNewArray[1]} ${userInfo[0]}, You are email address is ${userInfo[3]}. You worte ${wordsNmb} words. ${compliment[1]} You have got ${gotScore} score.`
+        );
+      } else {
+        console.log(
+          `${myNewArray[1]} ${userInfo[0]}, You are email address is ${userInfo[3]}. You worte ${wordsNmb} words. ${compliment[2]}  You have got ${gotScore} score.`
+        );
+      }
+    </script>
+  </body>
+</html>
