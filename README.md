@@ -13,3 +13,10 @@
 * JS basic
 
 
+## Installing and configure the git resourse tree.
+
+* Navigate to the link: https://www.sourcetreeapp.com/
+* Click the download button:
+* Double click the downloaded file to activate the installation wizard and follow the instruction by skipping the first step.
+* Finally leave your email.
+* Then you will need to create a github account if you haven't yet And if you do, login and create a new teste repository
